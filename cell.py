@@ -16,7 +16,6 @@ class AliveCell(Cell):
 
     def next(self, neighborhood):
         """Call the appropriate next method from the neighborhood using double dispatch."""
-        print("Alive cell", neighborhood, self)
         return neighborhood.next_alive()
     
     def join(self, neighborhood):
