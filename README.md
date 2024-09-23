@@ -40,6 +40,7 @@ The grid evolves over discrete time steps (generations) based on the following r
 Input files should contain a grid of the world. The first line contains the dimension of the square grid:
 - X represents a live cell
 - _ represents a dead cell
+
 **Example**
 ```
 5
