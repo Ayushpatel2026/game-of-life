@@ -40,6 +40,15 @@ The grid evolves over discrete time steps (generations) based on the following r
 Input files should contain a grid of the world. The first line contains the dimension of the square grid:
 - X represents a live cell
 - _ represents a dead cell
+**Example**
+```
+5
+_ _ _ _ _
+_ _ X _ _
+_ _ _ X _
+_ X X X _
+_ _ _ _ _
+```
 
 ### Adding New World Configurations
 To test a new world configuration, simply create a new .txt file with the desired initial world state and specify it when running the command.
