@@ -45,7 +45,6 @@ class Board:
         for i, cell in enumerate(line):
             self.grid[index][i] = cell
 
-    # this function is used to get the symbol at a given position
     def __repr__(self):
         return "\n".join(" ".join(str(cell) for cell in row) for row in self.grid)
 
@@ -63,12 +62,14 @@ class Board:
             return
         self.grid[i][j] = cell
 
+    # returns the neighborhood of a cell 
     def neighborhood(self, i, j):
         neighborhood = Empty()
         for cell in self.get_neighbors(i, j):
             neighborhood = cell.join(neighborhood)
         return neighborhood
     
+    # returns all 8 cells surrounding the cell at i, j
     def get_neighbors(self, i, j):
         neighbours = []
         for di in [-1, 0, 1]:
@@ -82,8 +83,10 @@ class Board:
         return neighbours
     
 class Symbol:
-    # we cannot use conditional statements, therefore we use this dictionary to map the symbol to the cell class
-    # this makes it easier to add new cell types (SOLID principles)
+    '''
+        we cannot use conditional statements, therefore we use this dictionary to map the symbol to the cell class
+        this makes it easier to add new cell types (SOLID principles)
+    '''
     _bindings = {
         '_': DeadCell,
         'X': AliveCell
